@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1100px;
+  margin: 0;
+  font-family: Raleway, Arial, sans-serif;
+  letter-spacing: -0.25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  color: inherit;
+  width: fit-content;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+.overlay {
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
+  background: #0009;
+}
+
+*:has(> .overlay) {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.overlay ~ * {
+  z-index: 2;
+}
